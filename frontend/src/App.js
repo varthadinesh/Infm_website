@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <h1>Hi Malli</h1>
       <h2>Eranna</h2>
-      <p>This is sample change</p>
+      <p>This is sample change of this file</p>
     </div>
   );
 }
