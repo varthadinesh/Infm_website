@@ -1,7 +1,9 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Query } from 'react-apollo';
+import DATA_QUERY from './Data/index';
 
 import Home from "./maincomponents/HOME/home";
 import Notfound from "./Notfound";
@@ -51,68 +53,131 @@ import Careers from "./maincomponents/CAREERS/careers";
 import Hyderabad from "./maincomponents/CAREERS/hyderabad";
 import Bangalore from "./maincomponents/CAREERS/bangalore";
 
-
-
 function App() {
-
   return (
-    <>
-      <BrowserRouter>
-        {/* <Scrolltotop /> */}
-        <Routes>
-          
-          <Route path="/" element={<Home/>}></Route>
+    <Query query={DATA_QUERY}>
+      {({ loading, error, data }) => {
+        if (loading) return <div>Fetching Data.....</div>;
+        if (error) return <div>Error Fetching Data</div>;
 
-          <Route path="Aboutus" element={<Aboutus/>}></Route>
-          <Route path="Vision" element={<Vision/>}></Route>
-          <Route path="Mission" element={<Mission/>}></Route>
+        console.log(data);
 
-          <Route path="Airline-Travel-Logistics" element={<AirlineTravelLogistics/>}></Route>
-          <Route path="Banking-Insurance-Services" element={<BankingInsuranceServices/>}></Route>
-          <Route path="Consumer-Retail" element={<ConsumerRetail/>}></Route>
-          <Route path="Energy-Utilities" element={<EnergyUtilities/>}></Route>
-          <Route path="Healthcare-LifeSciences" element={<HealthcareLifeSciences/>}></Route>
-          <Route path="Manufacturing-Automotive" element={<ManufacturingAutomotive/>}></Route>
-          <Route path="Media-Telecom" element={<MediaTelecom/>}></Route>
+        return (
+          <>
+            <BrowserRouter>
+              {/* <Scrolltotop /> */}
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
 
-          <Route path="Services" element={<Services/>}></Route>
-          <Route path="Application-Services" element={<ApplicationServices/>}></Route>
-          <Route path="AWS-Services" element={<AWSServices/>}></Route>
-          <Route path="Testing-QA-Services" element={<BusinessAssuranceTesting/>}></Route>
-          <Route path="Cloud-Services" element={<CloudServices/>}></Route>
-          <Route path="CRM" element={<CustomerRelationshipManagement/>}></Route>
-          <Route path="Data-Services" element={<DataServices/>}></Route>
-          <Route path="Digital-Transformation-Services" element={<DigitalTransformationServices/>}></Route>
-          <Route path="Enterprise-Portal" element={<EnterprisePortal/>}></Route>
-          <Route path="Free-POC-POT" element={<FreePOCPOT/>}></Route>
-          <Route path="Internet-Of-Things" element={<InternetOfThings/>}></Route>
-          <Route path="Microsoft365" element={<Microsoft365/>}></Route>
-          <Route path="Microsoft-Cloud-Services" element={<MicrosoftCloudServices/>}></Route>
-          <Route path="Security-Architecture" element={<SecurityArchitecture/>}></Route>
-          <Route path="Software-Sales" element={<SoftwareSales/>}></Route>
+                <Route path="Aboutus" element={<Aboutus />}></Route>
+                <Route path="Vision" element={<Vision />}></Route>
+                <Route path="Mission" element={<Mission />}></Route>
 
-          <Route path="Business-Process-Management" element={<BusinessProcessManagement/>}></Route>
-          <Route path="CRM" element={<CRM/>}></Route>
-          <Route path="DevOps" element={<DevOps/>}></Route>
-          <Route path="Mobility" element={<Mobility/>}></Route>
-          <Route path="Oracle-Cloud" element={<OracleCloud/>}></Route>
-          <Route path="Robotic-Automation-Process" element={<RoboticAutomationProcess/>}></Route>
-          <Route path="SAP" element={<SAP/>}></Route>
-          <Route path="Service-Oriented-Architecture" element={<ServiceOrientedArchitecture/>}></Route>
+                <Route
+                  path="Airline-Travel-Logistics"
+                  element={<AirlineTravelLogistics />}
+                ></Route>
+                <Route
+                  path="Banking-Insurance-Services"
+                  element={<BankingInsuranceServices />}
+                ></Route>
+                <Route
+                  path="Consumer-Retail"
+                  element={<ConsumerRetail />}
+                ></Route>
+                <Route
+                  path="Energy-Utilities"
+                  element={<EnergyUtilities />}
+                ></Route>
+                <Route
+                  path="Healthcare-LifeSciences"
+                  element={<HealthcareLifeSciences />}
+                ></Route>
+                <Route
+                  path="Manufacturing-Automotive"
+                  element={<ManufacturingAutomotive />}
+                ></Route>
+                <Route path="Media-Telecom" element={<MediaTelecom />}></Route>
 
-          <Route path="Contact" element={<Contactus/>}></Route>
+                <Route path="Services" element={<Services />}></Route>
+                <Route
+                  path="Application-Services"
+                  element={<ApplicationServices />}
+                ></Route>
+                <Route path="AWS-Services" element={<AWSServices />}></Route>
+                <Route
+                  path="Testing-QA-Services"
+                  element={<BusinessAssuranceTesting />}
+                ></Route>
+                <Route
+                  path="Cloud-Services"
+                  element={<CloudServices />}
+                ></Route>
+                <Route
+                  path="CRM"
+                  element={<CustomerRelationshipManagement />}
+                ></Route>
+                <Route path="Data-Services" element={<DataServices />}></Route>
+                <Route
+                  path="Digital-Transformation-Services"
+                  element={<DigitalTransformationServices />}
+                ></Route>
+                <Route
+                  path="Enterprise-Portal"
+                  element={<EnterprisePortal />}
+                ></Route>
+                <Route path="Free-POC-POT" element={<FreePOCPOT />}></Route>
+                <Route
+                  path="Internet-Of-Things"
+                  element={<InternetOfThings />}
+                ></Route>
+                <Route path="Microsoft365" element={<Microsoft365 />}></Route>
+                <Route
+                  path="Microsoft-Cloud-Services"
+                  element={<MicrosoftCloudServices />}
+                ></Route>
+                <Route
+                  path="Security-Architecture"
+                  element={<SecurityArchitecture />}
+                ></Route>
+                <Route
+                  path="Software-Sales"
+                  element={<SoftwareSales />}
+                ></Route>
 
-          <Route path="CSR" element={<Csr/>}></Route>
+                <Route
+                  path="Business-Process-Management"
+                  element={<BusinessProcessManagement />}
+                ></Route>
+                <Route path="CRM" element={<CRM />}></Route>
+                <Route path="DevOps" element={<DevOps />}></Route>
+                <Route path="Mobility" element={<Mobility />}></Route>
+                <Route path="Oracle-Cloud" element={<OracleCloud />}></Route>
+                <Route
+                  path="Robotic-Automation-Process"
+                  element={<RoboticAutomationProcess />}
+                ></Route>
+                <Route path="SAP" element={<SAP />}></Route>
+                <Route
+                  path="Service-Oriented-Architecture"
+                  element={<ServiceOrientedArchitecture />}
+                ></Route>
 
-          <Route path="Careers" element={<Careers/>}></Route>
-          <Route path="Careers-Hyd" element={<Hyderabad/>}></Route>
-          <Route path="Careers-Bangalore" element={<Bangalore/>}></Route>
+                <Route path="Contact" element={<Contactus />}></Route>
 
-      
-          <Route path="*" element={<Notfound />}></Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+                <Route path="CSR" element={<Csr />}></Route>
+
+                <Route path="Careers" element={<Careers />}></Route>
+                <Route path="Careers-Hyd" element={<Hyderabad />}></Route>
+                <Route path="Careers-Bangalore" element={<Bangalore />}></Route>
+
+                <Route path="*" element={<Notfound />}></Route>
+              </Routes>
+            </BrowserRouter>
+          </>
+        );
+      }}
+    </Query>
   );
 }
 
