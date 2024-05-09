@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Vision = () => {
+const Mobility = () => {
     return (
         <div>
-            <h1>Vision</h1>
+            <h1>Mobility</h1>
         </div>
     );
 };
 
-export default Vision;
+export default Mobility;
