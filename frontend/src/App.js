@@ -1,16 +1,11 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< Updated upstream
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import DATA_QUERY from './Data/index';
-=======
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
->>>>>>> Stashed changes
-
 import Home from "./maincomponents/HOME/home";
 import Notfound from "./Notfound";
 
