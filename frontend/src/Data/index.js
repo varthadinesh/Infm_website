@@ -3,7 +3,6 @@ const DATA_QUERY = gql`
 {
   assets {
     homeComponent {
-      id
       carousal1Heading
       carousal1Content
       carousal2Heading
@@ -12,6 +11,11 @@ const DATA_QUERY = gql`
     aboutUs {
       id
       aboutUsHeading
+      aboutUsContent
+      aboutUsContent2
+      aboutUsContent3
+      aboutUsContent4
+      aboutUsContent5
     }
   }
 }
