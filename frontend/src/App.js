@@ -60,16 +60,17 @@ function App() {
         if (loading) return <div>Fetching Data.....</div>;
         if (error) return <div>Error Fetching Data</div>;
 
-        console.log(data);
+        const res = data.assets[0];
+        // console.log(res.aboutUs.id);
 
         return (
           <>
             <BrowserRouter>
               {/* <Scrolltotop /> */}
               <Routes>
-                <Route path="/" element={<Home />}></Route>
+                <Route path="/" element={<Home key={res.homeComponent.id} product={res.homeComponent}/>}></Route>
 
-                <Route path="Aboutus" element={<Aboutus />}></Route>
+                <Route path="Aboutus" element={<Aboutus key={res.aboutUs.id} product={res.aboutUs}/>}></Route>
                 <Route path="Vision" element={<Vision />}></Route>
                 <Route path="Mission" element={<Mission />}></Route>
 
