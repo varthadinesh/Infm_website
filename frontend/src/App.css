@@ -1,38 +1,78 @@
-/* .App {
+
+.zoom-in{
+  font-size: 16px;
+  /* color: blue; */
+  margin: 20px 150px;
+}
+
+.zoom-in h1{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar toggle button */
+.toggle{
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 30px;
+  padding: 5px;
+  background-color: #E8E8E8;
+  color: #FE0000;
+  cursor: pointer;
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+#offcanvasRight{
+  width: 290px;
+  background: #75ACD5;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.offcanvas.slide {
+  transition-duration: 0.4s; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+/* Side navbar */
+.sidenavbardiv{
+  line-height: 10px;
+}
+.sidenavbardiv a{
+  color: white;
+  transition: 0.4s;
+}
+.sidenavbardiv a:hover{
+  color: red;
+  transition: 0.4s;
+}
+.aboutchilds {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.aboutchilds.show {
+  max-height: 200px; /* Adjust this value according to your content */
+  transition: max-height 0.9s ease-in-out;
+}
+
+.rotate-down {
+  transform: rotate(90deg);
+  transition: transform 0.4s ease-in-out;
+}
+
+.rotate-down:not(.rotate) {
+  transform: rotate(0);
+}
+.btnClose {
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Apply transition to the rotation */
+}
+
+.btnClose:hover {
+  color: blue; /* Change background color on hover */
+  
+}
+
+.btnClose.rotate {
+  transform: rotate(90deg); /* Rotate the icon to 90 degrees */
+}
+
+
